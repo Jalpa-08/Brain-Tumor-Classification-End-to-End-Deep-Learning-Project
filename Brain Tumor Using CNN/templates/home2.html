@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://bitbaroda.com/uploads/system/57f3c6d49921c666e47139e2ead526e3.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN TUMOR CLASSIFICATION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://res.cloudinary.com/dt4mln5sz/images/c_scale,w_448,h_448,dpr_2/f_webp,q_auto:best/v1706893705/3d_printed_brain/3d_printed_brain.jpeg?_i=AA');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #d9cbcb;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(19, 19, 19, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 10px solid #d9dcde;
+        }
+        h1 {
+            color: #ecf0f4;
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+            color: transparent; /* Make the text transparent */
+        }
+        .file-label {
+            display: inline-block;
+            background-color: #221db0;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .file-label:hover {
+            background-color: #559f9f;
+        }
+        .submit-button {
+            display: block;
+            margin: 0 auto; /* Center the button horizontally */
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BRAIN TUMOR CLASSIFICATION</h1>
+        <div class="inner-container">
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <!-- File Upload Input -->
+                <label for="image-upload" class="file-label">Select an Image</label>
+                <input id="image-upload" type="file" name="file" accept="image/*" required style="display: none;">
+
+                <!-- Submit Button (Centered) -->
+                <button type="submit" class="submit-button">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

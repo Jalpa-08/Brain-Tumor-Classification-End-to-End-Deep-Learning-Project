@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN TUMOR CLASSSIFIER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Use Arial font for better readability */
+            text-align: center; /* Center-align text */
+            padding: 50px; /* Add padding to the body */
+            background-image: url('https://res.cloudinary.com/dt4mln5sz/images/c_scale,w_448,h_448,dpr_2/f_webp,q_auto:best/v1706893705/3d_printed_brain/3d_printed_brain.jpeg?_i=AA'); /* Set background image URL */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Do not repeat background image */
+            background-attachment: fixed; /* Fix background image position */
+            color: #333; /* Dark gray color for text */
+        }
+        .container {
+            max-width: 500px; /* Limit container width for better readability */
+            margin: 0 auto; /* Center-align container */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background for container */
+            padding: 40px; /* Add padding to the container */
+            border-radius: 20px; /* Rounded corners for the container */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect for the container */
+            border: 10px solid #151617; /* Blue border around the container */
+        }
+        .inner-container {
+            padding: 70px; /* Add padding inside the inner container */
+            border: 10px solid #0f0f0f; /* Green border inside the container */
+            border-radius: 5px; /* Rounded corners for the inner container */
+        }
+       
+        h1 {
+          color: #18191a; /* Dark color for main heading */
+          margin-bottom: 40px; /* Add margin below main heading */
+          font-weight: bold; /* Make the heading bold */
+          font-size: 50px; /* Set the font size to 36 pixels */
+}
+
+        form {
+            margin-top: 20px; /* Add margin to the top of the form */
+        }
+        input[type="file"] {
+            margin-bottom: 20px; /* Add margin below file input */
+        }
+        .submit-button {
+            background-color: #221db0; /* Blue background color for submit button */
+            color: #fff; /* White text color */
+            padding: 10px 20px; /* Padding inside the button */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+        .submit-button:hover {
+            background-color: #111212; /* Darker blue background color on hover */
+        }
+        .result-text {
+            color: #272b28; /* Green color for result text */
+            margin-top: 20px; /* Add margin to the top of the result text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BRAIN TUMOR CLASSIFICATION</h1>
+        <div class="inner-container">
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required><br>
+                <button type="submit" class="submit-button">Predict</button>
+            </form>
+
+            {% if prediction_text %}
+                <p class="result-text">Predicted Tumor Type: {{ prediction_text }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

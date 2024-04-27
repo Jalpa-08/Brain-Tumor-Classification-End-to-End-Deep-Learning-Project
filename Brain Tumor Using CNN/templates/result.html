@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://bitbaroda.com/uploads/system/57f3c6d49921c666e47139e2ead526e3.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://res.cloudinary.com/dt4mln5sz/images/c_scale,w_448,h_448,dpr_2/f_webp,q_auto:best/v1706893705/3d_printed_brain/3d_printed_brain.jpeg?_i=AA');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #e9e3e3;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(34, 33, 33, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 10px solid #d1d6dc;
+        }
+        h1 {
+            color: #f9fbfd;
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .result-text {
+            color: #e0e9e9;
+            margin-top: 20px;
+            font-size: 45px;
+        }
+        .Generated_text {
+            color: #44a5e6;
+            margin-top: 20px;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result-text">
+            <p>Predicted Tumor Type:</p>
+        </div>
+        <div class="Generated_text">
+            <p>{{ prediction_text }}</p>
+        </div>
+    </div>
+</body>
+</html>

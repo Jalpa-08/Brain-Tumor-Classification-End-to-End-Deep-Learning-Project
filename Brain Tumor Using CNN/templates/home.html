@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classifier</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set a light gray background color */
+            font-family: Arial, sans-serif; /* Use Arial font for better readability */
+            text-align: center; /* Center-align text */
+            padding: 50px; /* Add padding to the body */
+        }
+        h1 {
+            color: #333; /* Dark gray color for headings */
+        }
+        form {
+            margin-top: 20px; /* Add margin to the top of the form */
+        }
+        img {
+            max-width: 300px; /* Limit image width to 300px for better display */
+            margin-top: 20px; /* Add margin to the top of the image */
+        }
+        h2 {
+            color: #007bff; /* Blue color for result text */
+            margin-top: 20px; /* Add margin to the top of the result text */
+        }
+    </style>
+</head>
+<body>
+    <h1>Brain Tumor Classifier</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h2>Predicted Tumor Type: {{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
